@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void abrirSharedPref() {
-        //TODO(5. Como mejora, abrir el shared pref con un nombre en particular para usar solo en esta pantalla)
         abrirSharedPref();preferences = getSharedPreferences(PREF_NAME_MAIN, MODE_PRIVATE);
     }
 

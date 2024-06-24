@@ -28,7 +28,6 @@ public class HomeActivity extends AppCompatActivity {
     private void setupToolbar() {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar); // Decirle que se comporte como action bar
-        // TODO(11. Como mejora, utilizar un recurso de string como titulo)
         String tituloToolbar = getString(R.string.titulo_toolbar);
         getSupportActionBar().setTitle(tituloToolbar); // Setear titulo
     }
@@ -52,7 +51,6 @@ public class HomeActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             String usuario = bundle.getString(PARAM_USUARIO);
-            // TODO (12. Como mejora, usar un recurso de string con formato para el saludo)
             String bienvenidoMensaje = getString(R.string.bienvenido_usuario, usuario);
             Toast.makeText(HomeActivity.this, bienvenidoMensaje, Toast.LENGTH_SHORT).show();
         }
