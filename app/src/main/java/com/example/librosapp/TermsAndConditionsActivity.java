@@ -34,11 +34,9 @@ public class TermsAndConditionsActivity extends AppCompatActivity {
     // Modulo 3 - clase 2 - Ejercicios
 
     private void abrirSharedPref() {
-        // TODO(2. Abrir el shared pref usando un nombre en particular para usar en esta pantalla)
         preferences = getSharedPreferences(PREF_NAME_TERMS_AND_COND, MODE_PRIVATE);
     }
     private void setupUI() {
-        // TODO(1. Vincular elementos)
         confirmacionContainer = findViewById(R.id.confirmacion_container);
         aceptarTermsAndCondBtn = findViewById(R.id.confirmacion_btn);
         aceptarTermsAndCondCheckBox = findViewById(R.id.confirmacion_checkbox);
@@ -46,8 +44,6 @@ public class TermsAndConditionsActivity extends AppCompatActivity {
         aceptarTermsAndCondBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // TODO(3. Cuando el usuario le da click al boton, guardar el estado del checkbox SOLO si hay confirmacion de lectura)
-                // TODO(5. Si el usuario no habilito el checkbox, mostrar un toast pidiendo la confirmacion)
                 if (aceptarTermsAndCondCheckBox.isChecked()) {
                     guardarPref();
                 } else {
@@ -64,9 +60,7 @@ public class TermsAndConditionsActivity extends AppCompatActivity {
     }
 
     private void cargarSharedPref() {
-        // TODO(4.Obtener la confirmacion de lectura)
         boolean lecturaConfirmada = preferences.getBoolean(KEY_PREF_CONFIRMACION_LECTURA, false);
-        // TODO(5. Ocultar el boton y el checkbox si hay confirmacion)
         if (lecturaConfirmada) {
             confirmacionContainer.setVisibility(View.GONE);
         }
