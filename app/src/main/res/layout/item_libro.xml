@@ -15,48 +15,6 @@
 
         <!-- TODO(Crear layout basado en la imagen de ejemplo) -->
 
-        <ImageView
-            android:id="@+id/libro_image_view"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="8dp"
-            tools:src="@drawable/placeholder"/>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/titulo_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                tools:text="Título del Libro" />
-
-            <TextView
-                android:id="@+id/autor_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:textSize="14sp"
-                android:textStyle="italic"
-                tools:text="Autor del Libro" />
-
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:gravity="end"
-            android:text="@string/ver_mas_click"
-            android:textColor="#2589DA"
-            android:textSize="14sp"
-            android:textStyle="italic" />
-
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

@@ -28,7 +28,7 @@ public class LibrosAdapter extends
 
     @Override
     public void onBindViewHolder(@NonNull LibrosViewHolder holder, int position) {
-        holder.bind(libros.get(position));
+        holder.bind(libros.get(position), onItemClickListener);
     }
 
     @Override

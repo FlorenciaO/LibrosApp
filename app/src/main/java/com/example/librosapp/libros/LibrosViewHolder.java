@@ -19,7 +19,7 @@ public class LibrosViewHolder extends RecyclerView.ViewHolder {
         // TODO(1. Vincular vistas)
     }
 
-    public void bind(Libro libro) {
+    public void bind(Libro libro, LibrosAdapter.OnItemClickListener onItemClickListener) {
         // TODO(2. Setear los atributos del libro a cada text view)
         // TODO(3. Implementar el click al item y al "Ver mas")
         // TODO(4. Según el imageId del libro, setear el recurso (drawable) especifico)
