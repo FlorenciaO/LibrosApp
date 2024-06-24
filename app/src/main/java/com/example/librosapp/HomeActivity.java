@@ -67,31 +67,25 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void setupAdapter() {
-        // TODO(1. Vincular recycler view)
         librosRV = findViewById(R.id.rvLibros);
 
-        // TODO(2. Crear instancia de Adapter)
         librosAdapter = new LibrosAdapter(new LibrosAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Libro libro) {
-                // TODO(6. Mostrar Toast informando que el libro [titulo] fue seleccionado mediante un recurso de string con formato)
-                Toast.makeText(HomeActivity.this, "", Toast.LENGTH_SHORT).show();
+                String libroSeleccionado = getString(R.string.libro_seleccionado, libro.getTitulo());
+                Toast.makeText(HomeActivity.this, libroSeleccionado, Toast.LENGTH_SHORT).show();
             }
         });
 
-        // TODO(3. Setear el adapter creado al recycler view)
         librosRV.setAdapter(librosAdapter);
-
-        // TODO(4. Setear la lista de libros al adapter)
         librosAdapter.setLibros(getLibros());
     }
 
     private List<Libro> getLibros() {
         return new ArrayList<Libro>() {{
-            // TODO(5. Cargar 3 libros con informacion)
-            add(new Libro());
-            add(new Libro());
-            add(new Libro());
+            add(new Libro(1, "Harry Potter", "J.K. Rowling", Libro.ImagenId.LIBRO1));
+            add(new Libro(2, "Game of Thrones", "George Martin", Libro.ImagenId.LIBRO2));
+            add(new Libro(3, "Maze Runner", "James Dashner", Libro.ImagenId.LIBRO3));
         }};
     }
 }

@@ -1,9 +1,13 @@
 package com.example.librosapp.libros;
 
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.librosapp.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,20 +25,21 @@ public class LibrosAdapter extends
     @NonNull
     @Override
     public LibrosViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        // TODO(1. Inflar la vista)
-        // TODO(2. Retornar el view holder)
-        return null;
+        View itemLibro =
+                LayoutInflater
+                        .from(parent.getContext())
+                        .inflate(R.layout.item_libro, parent, false);
+        return new LibrosViewHolder(itemLibro);
     }
 
     @Override
     public void onBindViewHolder(@NonNull LibrosViewHolder holder, int position) {
-        holder.bind(libros.get(position));
+        holder.bind(libros.get(position), onItemClickListener);
     }
 
     @Override
     public int getItemCount() {
-        // TODO(3. Retornar el tamaño de la lista)
-        return 0;
+        return libros.size();
     }
 
     public void setLibros(List<Libro> libros) {

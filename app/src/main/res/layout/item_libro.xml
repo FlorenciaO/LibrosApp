@@ -12,9 +12,6 @@
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
-
-        <!-- TODO(Crear layout basado en la imagen de ejemplo) -->
-
         <ImageView
             android:id="@+id/libro_image_view"
             android:layout_width="50dp"
@@ -48,6 +45,7 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/ver_mas_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"

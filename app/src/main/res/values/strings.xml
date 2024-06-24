@@ -14,4 +14,7 @@
     <string name="confirmar_lectura_checkbox">He leído y acepto los términos y condiciones</string>
     <string name="confirmar_lectura_boton">OK</string>
     <string name="ver_mas_click">Ver más</string>
+
+    <!-- Recursos clase 7 -->
+    <string name="libro_seleccionado">El libro %s ha sido seleccionado</string>
 </resources>
