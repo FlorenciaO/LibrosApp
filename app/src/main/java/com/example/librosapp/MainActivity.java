@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void abrirSharedPref() {
-        //TODO(5. Como mejora, abrir el shared pref con un nombre en particular para usar solo en esta pantalla)
+        //TODO(1. Como mejora, abrir el shared pref con un nombre en particular para usar solo en esta pantalla)
         abrirSharedPref();preferences = getPreferences(MODE_PRIVATE);
     }
 
@@ -75,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void abrirHomeActivity(String usuario) {
         Intent intent = new Intent(MainActivity.this, HomeActivity.class);
-        // TODO(1. Enviar el usuario como parametro a la HomeActivity)
         intent.putExtra(PARAM_USUARIO, usuario);
         startActivity(intent);
         finish();
@@ -83,7 +82,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void cargarSharedPref() {
         cargarUsuarioSharedPref();
-        // TODO(2. Cargar usuario SOLO si el usuario previamente habilito el checkbox)
         boolean recordarUsuario = preferences.getBoolean(KEY_PREF_RECORDAR_USUARIO, false);
         if (recordarUsuario) {
             cargarUsuarioSharedPref();
@@ -99,11 +97,9 @@ public class MainActivity extends AppCompatActivity {
     private void guardarSharedPref(String usuario) {
         SharedPreferences.Editor editor = preferences.edit();
 
-        // TODO(3. Guardar usuario SOLO si el usuario previamente habilito el checkbox)
         if (checkBoxRecordar.isChecked()) {
             editor.putString(KEY_PREF_USUARIO, usuario);
         }
-        // TODO(4. Guardar el estado del checkbox)
         editor.putBoolean(KEY_PREF_RECORDAR_USUARIO, checkBoxRecordar.isChecked());
         editor.apply();
     }

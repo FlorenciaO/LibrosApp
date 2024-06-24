@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
-    //TODO()
     private static final long DELAYED_TIME = 2000;
 
     @Override
@@ -27,12 +26,8 @@ public class SplashScreenActivity extends AppCompatActivity {
     }
 
     private void abrirMainActivity() {
-        //TODO(1. Crear el intent para ir hacia la Main Activity)
         Intent intent = new Intent(SplashScreenActivity.this, MainActivity.class);
-        //TODO(2. Iniciar la nueva activity)
         startActivity(intent);
-
-        //TODO(3. Ver comportamiento sin usar la siguiente linea, luego descomentarla y probar)
         finish(); // Para finalizar activity actual y sacarla de la pila.
     }
 }
