@@ -28,7 +28,7 @@ public class TermsAndConditionsActivity extends AppCompatActivity {
         cargarSharedPref();
     }
 
-    // Ejercicio adicional
+    // Modulo 3 - clase 2 - Ejercicios
 
     private void abrirSharedPref() {
         // TODO(2. Abrir el shared pref usando un nombre en particular para usar en esta pantalla)
@@ -49,6 +49,5 @@ public class TermsAndConditionsActivity extends AppCompatActivity {
         // TODO(4.Obtener la confirmacion de lectura)
         // TODO(5. Ocultar el boton y el checkbox si hay confirmacion)
     }
-
 
 }

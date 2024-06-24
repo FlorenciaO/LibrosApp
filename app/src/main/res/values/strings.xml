@@ -8,4 +8,5 @@
     <string name="crear_usuario">Crear Usuario</string>
     <string name="iniciar_sesion">Iniciar sesion</string>
     <string name="titulo_toolbar">Mis Libros</string>
+    <string name="bienvenido_usuario">Bienvenido %s</string>
 </resources>

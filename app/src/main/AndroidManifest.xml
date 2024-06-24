@@ -16,7 +16,6 @@
         <activity android:name=".TermsAndConditionsActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".MainActivity" />
-        <!-- TODO(1. Agregar la splash creen activity y convertirla en la activity launcher) -->
         <activity android:name=".SplashScreenActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
