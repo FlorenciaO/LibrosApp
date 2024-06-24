@@ -29,8 +29,6 @@ public class SplashScreenActivity extends AppCompatActivity {
     private void abrirMainActivity() {
         //TODO(1. Crear el intent para ir hacia la Main Activity)
         //TODO(2. Iniciar la nueva activity)
-//        Intent intent = new Intent(SplashScreenActivity.this, MainActivity.class);
-//        startActivity(intent);
 
         //TODO(3. Ver comportamiento sin usar la siguiente linea, luego descomentarla y probar)
         //finish(); // Para finalizar activity actual y sacarla de la pila.

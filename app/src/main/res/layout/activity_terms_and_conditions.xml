@@ -19,16 +19,7 @@
         android:text="@string/terminos_y_condiciones"
         android:textSize="24sp" />
 
-    <!-- TODO(1. Ver comportamiento sin ScrollView y luego agregar el texto dentro de una scroll view)
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="34dp">
-
-
-    </ScrollView>
-    -->
+    <!-- TODO(1. Ver comportamiento sin ScrollView y luego agregar el texto dentro de una scroll view) -->
 
     <!-- Ejercicio adicional -->
     <!--

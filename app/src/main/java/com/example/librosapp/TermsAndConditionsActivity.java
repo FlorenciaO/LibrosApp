@@ -28,11 +28,10 @@ public class TermsAndConditionsActivity extends AppCompatActivity {
         cargarSharedPref();
     }
 
-    // Ejercicio adicional
+    // Modulo 3 - clase 2 - Ejercicios
 
     private void abrirSharedPref() {
         // TODO(2. Abrir el shared pref usando un nombre en particular para usar en esta pantalla)
-        /*preferences = getSharedPreferences(PREF_NAME_TERMS_AND_COND, MODE_PRIVATE); */
     }
     private void setupUI() {
         // TODO(1. Vincular elementos)
