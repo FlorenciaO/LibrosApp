@@ -1,5 +1,6 @@
 package com.example.librosapp.libros;
 
+// TODO(1. Implementar Serializable)
 public class Libro {
 
     private Integer id;

@@ -1,11 +1,16 @@
 package com.example.librosapp;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -20,10 +25,26 @@ import java.util.List;
 public class HomeActivity extends AppCompatActivity {
 
     public static final String PARAM_USUARIO = "USUARIO";
+    public static final String PARAM_FOR_RESULT_LIBRO = "Libro";
 
     private Toolbar toolbar;
     private RecyclerView librosRV;
     private LibrosAdapter librosAdapter;
+
+    private ActivityResultLauncher<Intent> startForResult = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if (result.getResultCode() == Activity.RESULT_OK) {
+                        Libro nuevoLibro = (Libro) result.getData().getSerializableExtra(PARAM_FOR_RESULT_LIBRO);
+                        if (nuevoLibro != null) {
+                            agregarNuevoLibroAdapter(nuevoLibro);
+                        }
+                    }
+                }
+            }
+    );
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,8 +72,7 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.item_agregar) {
-            Intent intent = new Intent(HomeActivity.this, AgregarLibroActivity.class);
-            startActivity(intent);
+            // TODO(1. Escuchar el resultado de la nueva activity a lanzar)
         }
         return super.onOptionsItemSelected(item);
     }
@@ -72,6 +92,7 @@ public class HomeActivity extends AppCompatActivity {
         librosAdapter = new LibrosAdapter(new LibrosAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Libro libro) {
+                // TODO(2. Como mejora, abrir una nueva activity para mostrar los detalles del libro)
                 String libroSeleccionado = getString(R.string.libro_seleccionado, libro.getTitulo());
                 Toast.makeText(HomeActivity.this, libroSeleccionado, Toast.LENGTH_SHORT).show();
             }
@@ -87,5 +108,11 @@ public class HomeActivity extends AppCompatActivity {
             add(new Libro(2, "Game of Thrones", "George Martin", Libro.ImagenId.LIBRO2));
             add(new Libro(3, "Maze Runner", "James Dashner", Libro.ImagenId.LIBRO3));
         }};
+    }
+
+    private void agregarNuevoLibroAdapter(Libro nuevoLibro) {
+        List<Libro> libros = librosAdapter.getLibros();
+        libros.add(nuevoLibro);
+        librosAdapter.setLibros(libros);
     }
 }

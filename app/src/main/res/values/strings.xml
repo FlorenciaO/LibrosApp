@@ -17,4 +17,10 @@
 
     <!-- Recursos clase 7 -->
     <string name="libro_seleccionado">El libro %s ha sido seleccionado</string>
+
+    <!-- Recurso clase 8 -->
+    <string name="guardar_btn">Guardar</string>
+    <string name="autor">Autor</string>
+    <string name="titulo_del_libro">Título del libro</string>
+    <string name="agregar_libro">Agregar Libro</string>
 </resources>
