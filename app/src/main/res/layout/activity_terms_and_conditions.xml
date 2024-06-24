@@ -35,12 +35,6 @@
 
     </ScrollView>
 
-    <!-- Modulo 3 - clase 2 - Ejercicios -->
-    <!--
-    TODO(1. Agregar un checkbox que solicite la confirmación de lectura del usuario)
-    TODO(2.Agregar un boton para que presione aceptar y se fije que la confirmación fue hecha)
-    -->
-
     <LinearLayout
         android:id="@+id/confirmacion_container"
         android:layout_width="match_parent"
