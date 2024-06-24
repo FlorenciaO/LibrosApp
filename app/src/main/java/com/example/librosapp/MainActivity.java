@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void abrirSharedPref() {
-        abrirSharedPref();preferences = getSharedPreferences(PREF_NAME_MAIN, MODE_PRIVATE);
+        preferences = getSharedPreferences(PREF_NAME_MAIN, MODE_PRIVATE);
     }
 
     private void setupUI() {
