@@ -9,12 +9,21 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.librosapp.libros.Libro;
+import com.example.librosapp.libros.LibrosAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
 
     public static final String PARAM_USUARIO = "USUARIO";
 
     private Toolbar toolbar;
+    private RecyclerView librosRV;
+    private LibrosAdapter librosAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +32,7 @@ public class HomeActivity extends AppCompatActivity {
 
         setupToolbar();
         saludarUsuario();
+        setupAdapter();
     }
 
     private void setupToolbar() {
@@ -54,5 +64,34 @@ public class HomeActivity extends AppCompatActivity {
             String bienvenidoMensaje = getString(R.string.bienvenido_usuario, usuario);
             Toast.makeText(HomeActivity.this, bienvenidoMensaje, Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void setupAdapter() {
+        // TODO(1. Vincular recycler view)
+        librosRV = findViewById(R.id.rvLibros);
+
+        // TODO(2. Crear instancia de Adapter)
+        librosAdapter = new LibrosAdapter(new LibrosAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(Libro libro) {
+                // TODO(6. Mostrar Toast informando que el libro [titulo] fue seleccionado mediante un recurso de string con formato)
+                Toast.makeText(HomeActivity.this, "", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // TODO(3. Setear el adapter creado al recycler view)
+        librosRV.setAdapter(librosAdapter);
+
+        // TODO(4. Setear la lista de libros al adapter)
+        librosAdapter.setLibros(getLibros());
+    }
+
+    private List<Libro> getLibros() {
+        return new ArrayList<Libro>() {{
+            // TODO(5. Cargar 3 libros con informacion)
+            add(new Libro());
+            add(new Libro());
+            add(new Libro());
+        }};
     }
 }
