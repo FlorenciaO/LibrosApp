@@ -1,5 +1,7 @@
 package com.example.librosapp;
 
+import static com.example.librosapp.HomeActivity.PARAM_USUARIO;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -74,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
     private void abrirHomeActivity(String usuario) {
         Intent intent = new Intent(MainActivity.this, HomeActivity.class);
         // TODO(1. Enviar el usuario como parametro a la HomeActivity)
-        // intent.putExtra(PARAM_USUARIO, usuario);
+        intent.putExtra(PARAM_USUARIO, usuario);
         startActivity(intent);
         finish();
     }
@@ -82,11 +84,11 @@ public class MainActivity extends AppCompatActivity {
     private void cargarSharedPref() {
         cargarUsuarioSharedPref();
         // TODO(2. Cargar usuario SOLO si el usuario previamente habilito el checkbox)
-/*        boolean recordarUsuario = preferences.getBoolean(KEY_PREF_RECORDAR_USUARIO, false);
+        boolean recordarUsuario = preferences.getBoolean(KEY_PREF_RECORDAR_USUARIO, false);
         if (recordarUsuario) {
             cargarUsuarioSharedPref();
         }
-        checkBoxRecordar.setChecked(recordarUsuario);*/
+        checkBoxRecordar.setChecked(recordarUsuario);
     }
 
     private void cargarUsuarioSharedPref() {
@@ -100,11 +102,11 @@ public class MainActivity extends AppCompatActivity {
         editor.apply();
 
         // TODO(3. Guardar usuario SOLO si el usuario previamente habilito el checkbox)
-        // TODO(4. Guardar el estado del checkbox)
-/*        if (checkBoxRecordar.isChecked()) {
+        if (checkBoxRecordar.isChecked()) {
             editor.putString(KEY_PREF_USUARIO, usuario);
         }
+        // TODO(4. Guardar el estado del checkbox)
         editor.putBoolean(KEY_PREF_RECORDAR_USUARIO, checkBoxRecordar.isChecked());
-        editor.apply();*/
+        editor.apply();
     }
 }
