@@ -12,25 +12,22 @@
         android:text="@string/terminos_y_condiciones_titulo"
         android:textSize="36sp" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:text="@string/terminos_y_condiciones"
-        android:textSize="24sp" />
-
-    <!-- TODO(1. Ver comportamiento sin ScrollView y luego agregar el texto dentro de una scroll view)
-
+    <!-- TODO(1. Ver comportamiento sin ScrollView y luego agregar el texto dentro de una scroll view) -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="34dp">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:text="@string/terminos_y_condiciones"
+            android:textSize="24sp" />
 
     </ScrollView>
-    -->
 
-    <!-- Ejercicio adicional -->
+    <!-- Modulo 3 - clase 2 - ejercicios adicionales -->
     <!--
     TODO(2. Agregar un checkbox que solicite la confirmación de lectura del usuario)
     TODO(3.Agregar un boton para que presione aceptar y se fije que la confirmación fue hecha)

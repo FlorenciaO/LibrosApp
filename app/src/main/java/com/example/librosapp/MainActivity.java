@@ -98,8 +98,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void guardarSharedPref(String usuario) {
         SharedPreferences.Editor editor = preferences.edit();
-        editor.putString(KEY_PREF_USUARIO, usuario);
-        editor.apply();
 
         // TODO(3. Guardar usuario SOLO si el usuario previamente habilito el checkbox)
         if (checkBoxRecordar.isChecked()) {
