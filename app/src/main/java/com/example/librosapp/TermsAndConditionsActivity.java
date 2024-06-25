@@ -9,10 +9,12 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 public class TermsAndConditionsActivity extends AppCompatActivity {
 
 
+    private Toolbar toolbar;
     private SharedPreferences preferences;
     private LinearLayout confirmacionContainer;
     private CheckBox aceptarTermsAndCondCheckBox;
@@ -27,8 +29,15 @@ public class TermsAndConditionsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_terms_and_conditions);
 
         abrirSharedPref();
+        setUptoolbar();
         setupUI();
         cargarSharedPref();
+    }
+
+    private void setUptoolbar() {
+        // TODO (1. Vinculacion)
+        // TODO (2. Comportarse como action bar)
+        // TODO (3. Setear el titulo)
     }
 
     // Modulo 3 - clase 2 - Ejercicios
@@ -47,7 +56,7 @@ public class TermsAndConditionsActivity extends AppCompatActivity {
                 if (aceptarTermsAndCondCheckBox.isChecked()) {
                     guardarPref();
                 } else {
-                    Toast.makeText(TermsAndConditionsActivity.this, "Por favor, confirme que ha leído y aceptado los términos y condiciones", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(TermsAndConditionsActivity.this, getString(R.string.confirmar_mensaje_de_error), Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -55,12 +64,18 @@ public class TermsAndConditionsActivity extends AppCompatActivity {
 
     private void guardarPref() {
         SharedPreferences.Editor editor = preferences.edit();
-        editor.putBoolean(KEY_PREF_CONFIRMACION_LECTURA, aceptarTermsAndCondCheckBox.isChecked());
+        boolean lecturaConfirmada = aceptarTermsAndCondCheckBox.isChecked();
+        editor.putBoolean(KEY_PREF_CONFIRMACION_LECTURA, lecturaConfirmada);
         editor.apply();
+        ocultarConfirmacionContainer(lecturaConfirmada);
     }
 
     private void cargarSharedPref() {
         boolean lecturaConfirmada = preferences.getBoolean(KEY_PREF_CONFIRMACION_LECTURA, false);
+        ocultarConfirmacionContainer(lecturaConfirmada);
+    }
+
+    private void ocultarConfirmacionContainer(boolean lecturaConfirmada) {
         if (lecturaConfirmada) {
             confirmacionContainer.setVisibility(View.GONE);
         }

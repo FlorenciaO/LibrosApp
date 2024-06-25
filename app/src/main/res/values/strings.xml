@@ -13,4 +13,5 @@
     <!-- Recursos clase 2 -->
     <string name="confirmar_lectura_checkbox">He leído y acepto los términos y condiciones</string>
     <string name="confirmar_lectura_boton">OK</string>
+    <string name="confirmar_mensaje_de_error">Por favor, confirme que ha leído y aceptado los términos y condiciones</string>
 </resources>
