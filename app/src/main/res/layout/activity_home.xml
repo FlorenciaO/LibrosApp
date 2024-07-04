@@ -16,7 +16,6 @@
         app:elevation="4dp"
         app:popupTheme="@style/Theme.MaterialComponents.Light" />
 
-    <!-- TODO(Agregar un RecyclerView) -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvLibros"
         android:layout_width="match_parent"
