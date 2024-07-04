@@ -68,22 +68,13 @@ public class HomeActivity extends AppCompatActivity {
 
     private void setupAdapter() {
         // TODO(1. Vincular recycler view)
-        librosRV = findViewById(R.id.rvLibros);
 
         // TODO(2. Crear instancia de Adapter)
-        librosAdapter = new LibrosAdapter(new LibrosAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(Libro libro) {
-                // TODO(6. Mostrar Toast informando que el libro [titulo] fue seleccionado mediante un recurso de string con formato)
-                Toast.makeText(HomeActivity.this, "", Toast.LENGTH_SHORT).show();
-            }
-        });
+        // TODO(6. Mostrar Toast informando que el libro [titulo] fue seleccionado mediante un recurso de string con formato)
 
         // TODO(3. Setear el adapter creado al recycler view)
-        librosRV.setAdapter(librosAdapter);
 
         // TODO(4. Setear la lista de libros al adapter)
-        librosAdapter.setLibros(getLibros());
     }
 
     private List<Libro> getLibros() {
