@@ -8,26 +8,8 @@
         android:icon="@drawable/ic_add"/>
 
     <item
-        android:id="@+id/item_otro"
-        android:title="Agregar"
-        app:showAsAction="ifRoom"
-        android:icon="@drawable/ic_add"/>
-
-    <item
-        android:id="@+id/item_otro1"
-        android:title="Agregar"
-        app:showAsAction="ifRoom"
-        android:icon="@drawable/ic_add"/>
-
-    <item
         android:id="@+id/item_otro2"
         android:title="Eliminar"
         app:showAsAction="withText"
-        android:icon="@drawable/ic_add"/>
-
-    <item
-        android:id="@+id/item_otro3"
-        android:title="Agregar"
-        app:showAsAction="ifRoom"
         android:icon="@drawable/ic_add"/>
 </menu>

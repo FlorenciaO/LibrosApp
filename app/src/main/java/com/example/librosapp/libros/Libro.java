@@ -1,7 +1,9 @@
 package com.example.librosapp.libros;
 
+import java.io.Serializable;
+
 // TODO(1. Implementar Serializable)
-public class Libro {
+public class Libro implements Serializable {
 
     private Integer id;
     private String titulo;

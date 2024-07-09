@@ -48,6 +48,7 @@ public class AgregarLibroActivity extends AppCompatActivity {
             String autor = etAutor.getText().toString();
             Libro libro = new Libro(id, titulo, autor, Libro.ImagenId.PLACEHOLDER);
             // TODO(1. Enviar resultado a la activity previa -> HomeActivity)
+            setResult(RESULT_OK, new Intent().putExtra(PARAM_FOR_RESULT_LIBRO, libro));
             finish();
         } else {
             Toast.makeText(AgregarLibroActivity.this, "Completar todos los campos", Toast.LENGTH_SHORT).show();

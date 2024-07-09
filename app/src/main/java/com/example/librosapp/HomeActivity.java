@@ -73,6 +73,9 @@ public class HomeActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.item_agregar) {
             // TODO(1. Escuchar el resultado de la nueva activity a lanzar)
+            startForResult.launch(
+                    new Intent(HomeActivity.this, AgregarLibroActivity.class)
+            );
         }
         return super.onOptionsItemSelected(item);
     }
